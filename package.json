@@ -1,0 +1,22 @@
+
+{
+  "name": "chatsapp",
+  "version": "1.0.0",
+  "description": "Full-stack chat application",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd backend && node index.js",
+    "client": "cd frontend && npm start",
+    "dev": "concurrently --kill-others --names \"Frontend,Backend\" --prefix-colors \"bgYellow.bold,bgBlue.bold\" \"npm run client\" \"npm run server\"",    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "mern"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

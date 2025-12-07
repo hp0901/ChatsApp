@@ -1,0 +1,62 @@
+body.light {
+  background-color: #f8f9fa;
+  color: #212529;
+  transition: 0.3s ease;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f8f9fa;
+  transition: 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  background: var(--nav-bg, #007bff);
+  color: white;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-btn:hover {
+  text-decoration: underline;
+}
+
+.theme-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoomOut {
+  animation: zoomOut 0.6s ease-out forwards;
+}
+
