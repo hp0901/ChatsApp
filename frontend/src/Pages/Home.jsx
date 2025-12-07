@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaVideo, FaComments, FaUsers, FaPhoneAlt, FaTimes } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { motion as Motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ChatFeature from "../Feature/ChatFeature.jsx";
 import VideoCallFeature from "../Feature/VideoFeature.jsx";
@@ -14,7 +14,7 @@ export default function Home() {
   const callRoutes = {
     chat: "/chat",
     video: "/video-call",
-    audio: "/audio-call",
+    audio: "/voice",
   };
 
   const handleOptionClick = (type) => {
@@ -32,7 +32,7 @@ export default function Home() {
       
       {/* 🌟 Hero Section */} 
       <section className="flex flex-col items-center justify-center py-10 sm:py-16 md:py-20 w-full max-w-5xl mx-auto">
-        <Motion.h1
+        <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -40,16 +40,16 @@ export default function Home() {
         >
           <FaVideo className="text-blue-500 text-2xl sm:text-3xl" />
           Welcome to <span className="text-blue-700 dark:text-blue-300">VideoChat</span>
-        </Motion.h1>
+        </motion.h1>
 
-        <Motion.p
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mb-10 px-2"
         >
           Connect with friends, family, or colleagues through real-time video, audio, and chat — all in one place.
-        </Motion.p>
+        </motion.p>
 
         {/* Icons */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-blue-600 dark:text-blue-400 text-2xl sm:text-3xl md:text-4xl mb-10">
@@ -60,14 +60,14 @@ export default function Home() {
         </div>
 
         {/* Join Button */}
-        <Motion.button
+        <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowOptions(true)}
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-2xl shadow-lg transition font-semibold text-sm sm:text-base"
         >
           Join a Call 🚀
-        </Motion.button>
+        </motion.button>
       </section>
 
       {/* ✨ Divider */}
@@ -83,7 +83,7 @@ export default function Home() {
       {/* 🎯 Modal */}
       <AnimatePresence>
         {showOptions && (
-          <Motion.div
+          <motion.div
             id="overlay"
             onClick={handleOverlayClick}
             initial={{ opacity: 0 }}
@@ -91,7 +91,7 @@ export default function Home() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 px-4"
           >
-            <Motion.div
+            <motion.div
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
@@ -130,8 +130,8 @@ export default function Home() {
                   📞 Audio Call
                 </button>
               </div>
-            </Motion.div>
-          </Motion.div>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
